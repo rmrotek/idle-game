@@ -7,5 +7,6 @@ Tech used:
 * react
 * react-redux
 * reactstrap
+* layout made with grid
 
 
