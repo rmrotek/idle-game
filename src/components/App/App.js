@@ -29,10 +29,10 @@ class App extends Component {
         </div>
 
         <div className='upgrade-area'>
-          <button onClick={() => this.props.dispatch({ type: 'CLICK_INCREASE', payload: 3 })}>up to click power</button>
+          <button onClick={() => this.props.dispatch({ type: 'CLICK_BUY', payload: 3 })}>up to click power</button>
         </div>
         <div className='minion-area'>
-          <button onClick={() => this.props.dispatch({ type: 'AUTO_INCREASE', payload: 10 })}>up to click power</button>
+          <button onClick={() => this.props.dispatch({ type: 'AUTO_BUY', payload: 10 })}>up to click power</button>
         </div>
       </>
 

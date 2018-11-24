@@ -11,4 +11,11 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 );
+
+
+setInterval(() => { 
+  store.dispatch({ type: 'AUTO_INCREASE'})
+}, 1000)
+
+
 export default store 

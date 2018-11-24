@@ -5,6 +5,8 @@ const initialState = {
 
 };
 
+
+
 const reducer = (state = initialState, action) => {
   if (action.type === "INCREMENT") {
     return {
@@ -12,17 +14,24 @@ const reducer = (state = initialState, action) => {
       currentScore: state.currentScore + state.clickPower
     }
   }
-  if (action.type === "CLICK_INCREASE") {
+  if (action.type === "CLICK_BUY") {
     return {
       ...state,
       clickPower: state.clickPower + action.payload
     }
   }
 
-  if (action.type === "AUTO_INCREASE") {
+  if (action.type === "AUTO_BUY") {
     return {
       ...state,
       autoPower: state.autoPower + action.payload
+    }
+  }
+  
+  if (action.type === "AUTO_INCREASE") {
+    return {
+      ...state,
+      currentScore: state.currentScore + state.autoPower
     }
   }
 
