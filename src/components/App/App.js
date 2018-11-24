@@ -32,10 +32,10 @@ class App extends Component {
           <button onClick={() => this.props.dispatch({ type: 'CLICK_INCREASE', payload: 3 })}>up to click power</button>
         </div>
         <div className='minion-area'>
-          minion
+          <button onClick={() => this.props.dispatch({ type: 'AUTO_INCREASE', payload: 10 })}>up to click power</button>
         </div>
       </>
-      
+
 
     );
   }

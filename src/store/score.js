@@ -19,6 +19,13 @@ const reducer = (state = initialState, action) => {
     }
   }
 
+  if (action.type === "AUTO_INCREASE") {
+    return {
+      ...state,
+      autoPower: state.autoPower + action.payload
+    }
+  }
+
   return state;
 };
 
