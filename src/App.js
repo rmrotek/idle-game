@@ -1,26 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container, Row, Col } from 'reactstrap';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Container>
+        <Row style={{ background: 'grey' }}>
+          <Col>
+            menu
+          </Col>
+        </Row>
+        <Row style={{ background: 'red' }}>
+          <Col md={{ size: 6, offset: 3}} style={{ border: '2px solid black', textAlign: 'center' }}>
+            score
+          </Col>
+
+
+        </Row>
+        <Row style={{ background: 'lightblue' }}>
+          <Col md={{ size: 4}} style={{ border: '2px solid black', textAlign: 'center' }}>
+            clickable
+          </Col>
+          <Col md={{ size: 8}} style={{ border: '2px solid black', textAlign: 'center' }}>
+            upgrades
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
