@@ -15,7 +15,7 @@ const reducer = (state = initialState, action) => {
   if (action.type === "CLICK_INCREASE") {
     return {
       ...state,
-      currentScore: state.currentScore + state.clickPower
+      clickPower: state.clickPower + action.payload
     }
   }
 
