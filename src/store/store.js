@@ -1,13 +1,10 @@
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
+import scoreReducer from './score'
 
-const initialState = 0;
-const reducer = (state = initialState, action) => {
-  if (action.type === "INCREMENT") {
-    return state + 1;
-  }
+const reducer = combineReducers({
+  score: scoreReducer
+})
 
-  return state;
-};
 // Tworzenie store'a (potrzebny jest reducer)
 const store = createStore(
   reducer,
