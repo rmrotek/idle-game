@@ -4,9 +4,9 @@
 const initialState = {
   currentScore: 0,
   clickPowerUpgrades: {
-    
+
     upgradeOne: {
-      cost: 50,
+      cost: 10,
       power: 0,
       increment: 5
     },
@@ -15,7 +15,7 @@ const initialState = {
       power: 1,
       increment: 0.1
     },
-    
+
   },
   autoPower: 0,
 
@@ -31,17 +31,20 @@ const reducer = (state = initialState, action) => {
     }
   }
   if (action.type === "CLICK_BUY_ONE") {
-    return {
-      ...state,
-      clickPowerUpgrades: {
-        ...state.clickPowerUpgrades,
-        upgradeOne: {
-          ...state.clickPowerUpgrades.upgradeOne,
-          cost: state.clickPowerUpgrades.upgradeOne.cost*2,
-          power: state.clickPowerUpgrades.upgradeOne.power + state.clickPowerUpgrades.upgradeOne.increment
+    if (state.currentScore >= state.clickPowerUpgrades.upgradeOne.cost) {
+      return {
+        ...state,
+        clickPowerUpgrades: {
+          ...state.clickPowerUpgrades,
+          upgradeOne: {
+            ...state.clickPowerUpgrades.upgradeOne,
+            cost: state.clickPowerUpgrades.upgradeOne.cost * 2,
+            power: state.clickPowerUpgrades.upgradeOne.power + state.clickPowerUpgrades.upgradeOne.increment
+          }
         }
       }
     }
+    return state;
   }
   if (action.type === "CLICK_BUY_TWO") {
     return {
@@ -50,7 +53,7 @@ const reducer = (state = initialState, action) => {
         ...state.clickPowerUpgrades,
         upgradeTwo: {
           ...state.clickPowerUpgrades.upgradeTwo,
-          cost: state.clickPowerUpgrades.upgradeTwo.cost*2,
+          cost: state.clickPowerUpgrades.upgradeTwo.cost * 2,
           power: state.clickPowerUpgrades.upgradeTwo.power + state.clickPowerUpgrades.upgradeTwo.increment
         }
       }
@@ -63,7 +66,7 @@ const reducer = (state = initialState, action) => {
       autoPower: state.autoPower + action.payload
     }
   }
-  
+
   if (action.type === "AUTO_INCREASE") {
     return {
       ...state,
