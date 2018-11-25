@@ -14,7 +14,7 @@ class App extends Component {
       <>
         <div className='score-area'>
           <p>
-            score: {this.props.currentScore}
+            score: {this.props.currentScore.toFixed(2)}
           </p>
           <p>
             click power: {this.totalClickPower().toFixed(2)}
