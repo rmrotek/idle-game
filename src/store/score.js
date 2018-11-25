@@ -35,7 +35,11 @@ const reducer = (state = initialState, action) => {
       ...state,
       clickPowerUpgrades: {
         ...state.clickPowerUpgrades,
-        upgradeOne: state.clickPowerUpgrades.upgradeOne + action.payload
+        upgradeOne: {
+          ...state.clickPowerUpgrades.upgradeOne,
+          cost: state.clickPowerUpgrades.upgradeOne.cost*2,
+          power: state.clickPowerUpgrades.upgradeOne.power + state.clickPowerUpgrades.upgradeOne.increment
+        }
       }
     }
   }
@@ -44,7 +48,11 @@ const reducer = (state = initialState, action) => {
       ...state,
       clickPowerUpgrades: {
         ...state.clickPowerUpgrades,
-        upgradeTwo: state.clickPowerUpgrades.upgradeTwo + action.payload
+        upgradeTwo: {
+          ...state.clickPowerUpgrades.upgradeTwo,
+          cost: state.clickPowerUpgrades.upgradeTwo.cost*2,
+          power: state.clickPowerUpgrades.upgradeTwo.power + state.clickPowerUpgrades.upgradeTwo.increment
+        }
       }
     }
   }
