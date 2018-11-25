@@ -22,7 +22,6 @@ class App extends Component {
           <p>
             auto power: {this.props.currentAutoPower}
           </p>
-
         </div>
 
         <div className='menu-area'>
