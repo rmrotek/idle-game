@@ -5,8 +5,16 @@ const initialState = {
   currentScore: 0,
   clickPowerUpgrades: {
     
-    upgradeOne: 1,
-    upgradeTwo: 1,
+    upgradeOne: {
+      cost: 50,
+      power: 0,
+      increment: 5
+    },
+    upgradeTwo: {
+      cost: 50,
+      power: 1,
+      increment: 0.1
+    },
     
   },
   autoPower: 0,

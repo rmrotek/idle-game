@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 class App extends Component {
   totalClickPower() {
     const { upgradeOne, upgradeTwo } = this.props.clickPowerUpgrades
-    return (1 + upgradeOne) * upgradeTwo
+    return (1 + upgradeOne.power) * upgradeTwo.power
   }
 
   render() {
@@ -33,8 +33,8 @@ class App extends Component {
         </div>
 
         <div className='upgrade-area'>
-          <button onClick={() => this.props.buyClickUpgradeOne(3)}>up to click power</button>
-          <button onClick={() => this.props.buyClickUpgradeTwo(0.1)}>up to click power %</button>
+          <button onClick={() => this.props.buyClickUpgradeOne()}>up to click power</button>
+          <button onClick={() => this.props.buyClickUpgradeTwo()}>up to click power %</button>
 
         </div>
         <div className='minion-area'>
@@ -50,7 +50,8 @@ class App extends Component {
 const mapStateToProps = state => ({
   currentScore: state.score.currentScore,
   currentAutoPower: state.score.autoPower,
-  clickPowerUpgrades: state.score.clickPowerUpgrades
+  clickPowerUpgrades: state.score.clickPowerUpgrades,
+  
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -59,15 +60,15 @@ const mapDispatchToProps = dispatch => ({
       type: "INCREMENT",
       payload: power
     }),
-  buyClickUpgradeOne: power =>
+  buyClickUpgradeOne: () =>
     dispatch({
-      type: "CLICK_BUY_ONE",
-      payload: power
+      type: "CLICK_BUY_ONE"
+      
     }),
-  buyClickUpgradeTwo: power =>
+  buyClickUpgradeTwo: () =>
     dispatch({
-      type: "CLICK_BUY_TWO",
-      payload: power
+      type: "CLICK_BUY_TWO"
+      
     }),
   buyAutoUpgradeOne: power =>
     dispatch({
