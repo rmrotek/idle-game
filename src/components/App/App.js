@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 class App extends Component {
   totalClickPower() {
     const { upgradeOne, upgradeTwo } = this.props.clickPowerUpgrades
-    return 1 + upgradeOne + upgradeTwo
+    return (1 + upgradeOne) * upgradeTwo
   }
 
   render() {
@@ -17,10 +17,10 @@ class App extends Component {
             score: {this.props.currentScore}
           </p>
           <p>
-            click power: {this.totalClickPower()}
+            click power: {this.totalClickPower().toFixed(2)}
           </p>
           <p>
-            auto power: {this.props.currentAutoPower}
+            auto power: {this.props.currentAutoPower.toFixed(2)}
           </p>
         </div>
 
@@ -34,7 +34,7 @@ class App extends Component {
 
         <div className='upgrade-area'>
           <button onClick={() => this.props.buyClickUpgradeOne(3)}>up to click power</button>
-          <button onClick={() => this.props.buyClickUpgradeTwo(4)}>up to click power</button>
+          <button onClick={() => this.props.buyClickUpgradeTwo(0.1)}>up to click power %</button>
 
         </div>
         <div className='minion-area'>

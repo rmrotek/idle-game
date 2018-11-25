@@ -6,7 +6,7 @@ const initialState = {
   clickPowerUpgrades: {
     
     upgradeOne: 1,
-    upgradeTwo: 2,
+    upgradeTwo: 1,
     
   },
   autoPower: 0,
