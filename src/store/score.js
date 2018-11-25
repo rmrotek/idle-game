@@ -21,7 +21,7 @@ const initialState = {
 
 };
 
-
+// TODO REFACTOR REDUCER ACTIONS TOO MUCH C/P
 
 const reducer = (state = initialState, action) => {
   if (action.type === "INCREMENT") {
